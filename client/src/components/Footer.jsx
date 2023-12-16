@@ -38,8 +38,7 @@ function Footer() {
             </div>
 
             <div class="row">
-              INFERNO Copyright © 2021 Inferno - All rights reserved || Designed
-              By: Mahesh
+              LoginRegister Copyright © 2021 LoginRegister - All rights reserved
             </div>
           </div>
         </footer>
