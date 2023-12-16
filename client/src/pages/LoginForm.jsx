@@ -1,13 +1,12 @@
 import { useState } from "react";
-import "../styles/RegisterForm.css";
-import RegisterValidation from "../js/registerValidation";
+import "../styles/LoginForm.css";
+import LoginValidation from "../js/loginValidation";
+import { Link } from "react-router-dom";
 
-function RegisterForm() {
+function LoginForm() {
   const [values, setValues] = useState({
-    username: "",
     email: "",
     password: "",
-    confirmed_password: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -21,60 +20,53 @@ function RegisterForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors(RegisterValidation(values));
+    setErrors(LoginValidation(values));
   };
 
   return (
-    <div className="container">
-      <form action="" onSubmit={handleSubmit}>
-        <h1>Register</h1>
-        <div className="username-input-container">
-          <input
-            type="text"
-            name="username"
-            id="username-input"
-            placeholder="Username"
-            onChange={handleInput}
-          />
-          <span id="errors-username">
-            {errors.username ? errors.username : "U"}
-          </span>
-        </div>
+    <>
+      <div className="container">
+        <form action="" onSubmit={handleSubmit}>
+          <h1>Login</h1>
 
-        <div className="email-input-container">
-          <input
-            type="email"
-            name="email"
-            id="email-input"
-            placeholder="Email"
-            onChange={handleInput}
-          />
-          <span id="errors-email">
-            {errors.username ? errors.username : "E"}
-          </span>
-        </div>
+          <div className="email-input-container">
+            <input
+              type="email"
+              name="email"
+              id="email-input"
+              placeholder="Email"
+              onChange={handleInput}
+            />
+            <span id="errors-email">
+              {errors.username ? errors.username : ""}
+            </span>
+          </div>
 
-        <div className="password-input-container">
-          <input
-            type="password"
-            name="password"
-            id="password-input"
-            placeholder="Password"
-            onChange={handleInput}
-          />
-          <span id="errors-email">
-            {errors.password ? errors.password : "P"}
-          </span>
-        </div>
+          <div className="password-input-container">
+            <input
+              type="password"
+              name="password"
+              id="password-input"
+              placeholder="Password"
+              onChange={handleInput}
+            />
+            <span id="errors-email">
+              {errors.password ? errors.password : ""}
+            </span>
+          </div>
 
-        <p id="having-acc-txt">
-          Already have an account? <a href="">Login Here</a>
-        </p>
+          <p id="no-have-acc-txt">
+            Don't have an account yet?{" "}
+            <Link id="register-link-btn" to="/register">
+              Sign Up Here
+            </Link>
+          </p>
 
-        <input type="submit" value="Login" id="submit-btn" />
-      </form>
-    </div>
+          <input type="submit" value="Login" id="submit-btn" />
+        </form>
+      </div>
+    </>
   );
 }
 
-export default RegisterForm;
+export default LoginForm;

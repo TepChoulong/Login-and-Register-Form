@@ -18,7 +18,7 @@ form {
   width: 350px;
   height: auto;
   border: 1px solid black;
-  padding: 2rem 1.5rem 5rem 1.5rem;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   margin: 0 auto 0;
   background-color: #001b79;
   /* box-shadow: #ed5ab3 2px 2px 45px 10px; */
@@ -39,6 +39,19 @@ form input[type="password"] {
   margin-bottom: 0.5rem;
   transition: 0.2s ease-in;
 }
+
+#no-have-acc-txt {
+  margin: 2rem 0 10px 0;
+  font-size: 11pt;
+  color: #ff90c2;
+  text-align: center;
+}
+
+#login-link-btn {
+  color: white;
+  text-decoration: none;
+}
+
 form input[type="text"]::placeholder,
 form input[type="email"]::placeholder,
 form input[type="password"]::placeholder {
@@ -55,32 +68,4 @@ form input[type="submit"] {
   border: none;
   color: white;
   font-weight: 600;
-}
-
-#having-acc-txt {
-  margin: 1rem 0 10px 0;
-  font-size: 11pt;
-  color: #ff90c2;
-  text-align: center;
-}
-
-#register-link-btn {
-  color: white;
-  text-decoration: none;
-}
-
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus {
-  padding: 0 8px 16px 8px;
-  font-size: 13pt;
-}
-
-#errors-username,
-#errors-email,
-#errors-password,
-#errors-confirmed-password {
-  margin: 0;
-  margin-top: 5px;
-  color: rgb(220, 10, 10);
 }
